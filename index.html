@@ -31,13 +31,14 @@
 				<div class="col-sm-8 col-sm-offset-2">
 					<img src="img/logo1.png" alt="" class="center-block homepageLogo">
 					<h1 class="center-block homepageSub">Search Jobs.ie, IrishJobs.ie, and Monster.ie in one place</h1>
-					<form class="form-inline homepageForm">
+					<form id="homepageForm" class="form-inline">
 					  <div class="form-group">
 					  	<label for="keyword" class="sr-only">job keyword</label>
-					    <input type="text" class="form-control" id="keyword" placeholder="Ideal Job">
+					    <input type="text" class="form-control" id="keyword" placeholder="job" name="keyword">
 					    <label for="location" class="sr-only">job location</label>
-					    <input type="text" class="form-control" name="location" placeholder="Where" data-provide="typeahead" id="jobLocation">
+					    <input type="text" class="form-control" name="location" placeholder="location" data-provide="typeahead" id="jobLocation">
 					  </div>
+					  <button type="submit" class="btn btn-default">Go</button>
 				  </form>
 				</div>
 			</div>
@@ -46,7 +47,7 @@
 
 
 
-			
+
 		</div>
 
 
