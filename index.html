@@ -28,21 +28,33 @@
 			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 			</div> -->
 			<div class="row" style="">
-				<div class="col-sm-12 col-md-8 col-md-offset-2">
+				<div class="col-sm-8 col-sm-offset-2">
 					<img src="img/logo1.png" alt="" class="center-block homepageLogo">
-					<form>
+					<h1 class="center-block homepageSub">Search Jobs.ie, IrishJobs.ie, and Monster.ie in one place</h1>
+					<form class="form-inline homepageForm">
 					  <div class="form-group">
-					  	<label for="keyword" class="sr-only">search ireland's jobs</label>
-					    <input type="text" class="form-control" id="keyword" placeholder="Search Ireland's jobs">
+					  	<label for="keyword" class="sr-only">job keyword</label>
+					    <input type="text" class="form-control" id="keyword" placeholder="Ideal Job">
+					    <label for="location" class="sr-only">job location</label>
+					    <input type="text" class="form-control" name="location" placeholder="Where" data-provide="typeahead" id="jobLocation">
 					  </div>
+				  </form>
 				</div>
 			</div>
+
+
+
+
+
+			
 		</div>
 
 
 
 		<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/jquery-3.1.0.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/typeahead.js"></script>
+		<script src="js/myScripts.js"></script>
 	</body>
 </html>
