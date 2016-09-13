@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Jobster</title>
+		<title>Jobster Results</title>
 
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -20,17 +20,17 @@
 	</head>
 	<body>
 
-		<div class="container-fluid homepageContainer" style="padding-top:30vh">
-<!-- 
-			<div class="jumbotron">
-			  <h1>Hello, world!</h1>
-			  <p>...</p>
-			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-			</div> -->
+		<div class="container-fluid homepageContainer" style="padding-top:10vh">
+
 			<div class="row" style="">
 				<div class="col-sm-8 col-sm-offset-2">
 					<img src="img/logo1.png" alt="" class="center-block homepageLogo">
-					<h1 class="center-block homepageSub">Search Jobs.ie, IrishJobs.ie, and Monster.ie in one place</h1>
+					<!-- <h1 class="center-block homepageSub">Results</h1> -->
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
 					<form id="searchForm" class="form-inline">
 					  <div class="form-group">
 					  	<label for="keyword" class="sr-only">job keyword</label>
@@ -44,6 +44,15 @@
 			</div>
 
 
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+
+					<ul class="list-group results-list" id="results">
+
+					</ul>
+			</div>
+
+
 
 
 
@@ -54,8 +63,25 @@
 
 		<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
 		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/handlebars.min-latest.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/typeahead.js"></script>
 		<script src="js/myScripts.js"></script>
+		<script id="job-template" type="text/x-handlebars-template">
+		  <div class="media">
+			  <a href="http://{{link}}" target="_blank">
+				  <div class="media-left media-middle">
+			      <img class="media-object site-logo" src="{{siteLogo}}" alt="">
+				  </div>
+				  <div class="media-body">
+				    <h4 class="media-heading">{{title}}</h4>
+				    <p>{{description}}</p>
+				  </div>
+			  </a>
+			</div>
+		</script>
+		<script>
+			window.onload = loadSearchPage()
+		</script>
 	</body>
 </html>

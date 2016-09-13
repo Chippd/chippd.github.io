@@ -1,10 +1,12 @@
 
-
-.homepageContainer {
-    background: #085078; /* fallback for old browsers */
+body {
+	    background: #085078; /* fallback for old browsers */
 		background: -webkit-linear-gradient(to left, #085078 , #85D8CE); /* Chrome 10-25, Safari 5.1-6 */
 		background: linear-gradient(to left, #085078 , #85D8CE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height:100vh;
+}
+
+a, a:hover {
+	color:initial;
 }
 
 
@@ -18,7 +20,28 @@
 	text-align: center
 }
 
-#homepageForm {
+#searchForm {
 	text-align: center;
 	margin-top: 40px;
+}
+
+.align-center {
+	text-align:center;
+	margin:auto;
+}
+
+.results-list {
+	text-align:left;
+}
+
+.site-logo{
+	max-width: 150px
+}
+
+.ij-logo {
+	background-color: black
+}
+
+#results {
+	margin-top:50px;
 }
