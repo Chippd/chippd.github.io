@@ -9,6 +9,13 @@ a, a:hover {
 	color:initial;
 }
 
+.m-t-1 {
+	margin-top:1em;
+}
+
+.p-t-1 {
+	padding-top:1em;
+}
 
 .homepageLogo {
 	margin-bottom:20px;
@@ -22,12 +29,11 @@ a, a:hover {
 
 #searchForm {
 	text-align: center;
-	margin-top: 40px;
+	/*margin-top: 40px;*/
 }
 
 .align-center {
 	text-align:center;
-	margin:auto;
 }
 
 .results-list {
@@ -46,8 +52,11 @@ a, a:hover {
 	margin-top:50px;
   background: rgba(255,255,255,0.2);
   padding:25px;
+  border-radius:5px;
 }
 
 .loadingDone {
 	display: none;
 }
+
+

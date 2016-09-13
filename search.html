@@ -25,8 +25,9 @@
 
 			<div class="row" style="">
 				<div class="col-sm-8 col-sm-offset-2">
-					<img src="img/logo1.png" alt="" class="center-block homepageLogo">
-					<!-- <h1 class="center-block homepageSub">Results</h1> -->
+					<a href="/">
+						<img src="img/logo2.png" alt="" class="center-block homepageLogo">
+					</a>
 				</div>
 			</div>
 
@@ -35,49 +36,45 @@
 					<form id="searchForm" class="form-inline">
 					  <div class="form-group">
 					  	<label for="keyword" class="sr-only">job keyword</label>
-					    <input type="text" class="form-control" id="keyword" placeholder="job" name="keyword">
+					    <input type="text" class="form-control m-t-1" id="keyword" placeholder="job" name="keyword">
 					    <label for="location" class="sr-only">job location</label>
-					    <input type="text" class="form-control" name="location" placeholder="location" data-provide="typeahead" id="jobLocation">
+					    <input type="text" class="form-control m-t-1" name="location" placeholder="location" data-provide="typeahead" id="jobLocation">
 					  </div>
-					  <button type="submit" class="btn btn-default">Go</button>
+					  <button type="submit" class="btn btn-default m-t-1">Go</button>
 				  </form>
 				</div>
 			</div>
 
 
-			<div class="row" style="margin-top:25px">
-				<div class="col-sm-3 col-sm-offset-2">
-					<img src="img/loading.svg" id="irishJobsLoading" width="25px">
-					<img src="img/tick.png" class="loadingDone" width="25px" alt="">
-					<img src="img/irishjobs.png" width=75px >
-				</div>
-				<div class="col-sm-3">
-					<img src="img/loading.svg" id="jobsieLoading" width="25px">
-					<img src="img/tick.png" class="loadingDone" width="25px" alt="">
-					<img src="img/jobs.png" width=75px >
-				</div>
-				<div class="col-sm-3">
-					<img src="img/loading.svg" id="monsterLoading" width="25px">
-					<img src="img/tick.png" class="loadingDone" width="25px" alt="">
-					<img src="img/monster.png" width=75px >
+			<div class="col-sm-8 col-sm-offset-2" style="margin-top:25px">
+				<div class="row">
+					<div class="col-sm-4 align-center p-t-1">
+						<img src="img/loading.svg" id="irishJobsLoading" width="25px">
+						<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+						<img src="img/irishjobs.png" width=75px >
+					</div>
+					<div class="col-sm-4 align-center p-t-1">
+						<img src="img/loading.svg" id="jobsieLoading" width="25px">
+						<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+						<img src="img/jobs.png" width=75px >
+					</div>
+					<div class="col-sm-4 align-center p-t-1">
+						<img src="img/loading.svg" id="monsterLoading" width="25px">
+						<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+						<img src="img/monster.png" width=75px >
+					</div>
 				</div>
 			</div>
 
 
 			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
-
-					<ul class="list-group results-list" id="results">
-
-					</ul>
+			    <div class="col-sm-8 col-sm-offset-2">
+			        <ul class="list-group results-list" id="results">
+			            <!-- jobs go here -->
+			        </ul>
+			    </div>
 			</div>
 
-
-
-
-
-
-		</div>
 
 
 
@@ -89,13 +86,27 @@
 		<script src="js/myScripts.js"></script>
 		<script id="job-template" type="text/x-handlebars-template">
 		  <div class="media animated fadeInUp">
-			  <a href="http://{{link}}" target="_blank">
+			  <a href="{{link}}" target="_blank">
 				  <div class="media-left media-middle">
 			      <img class="media-object site-logo" src="{{siteLogo}}" alt="">
 				  </div>
 				  <div class="media-body">
 				    <h4 class="media-heading">{{title}}</h4>
 				    <p>{{description}}</p>
+				    <p>
+
+				    {{#if company}}
+							<span>Company: {{company}}, </span>
+						{{/if}}
+				  	
+				  	{{#if location}}
+				  		<span>{{location}}, </span>
+				  	{{/if}}
+							
+				  	{{#if date}}
+				  		<span>{{date}}</span>
+				  	{{/if}}
+				  </p>
 				  </div>
 			  </a>
 			</div>
