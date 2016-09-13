@@ -44,4 +44,10 @@ a, a:hover {
 
 #results {
 	margin-top:50px;
+  background: rgba(255,255,255,0.2);
+  padding:25px;
+}
+
+.loadingDone {
+	display: none;
 }

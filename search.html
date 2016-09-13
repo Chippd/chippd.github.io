@@ -8,6 +8,7 @@
 		<title>Jobster Results</title>
 
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/style.css">
 
 
@@ -44,6 +45,25 @@
 			</div>
 
 
+			<div class="row" style="margin-top:25px">
+				<div class="col-sm-3 col-sm-offset-2">
+					<img src="img/loading.svg" id="irishJobsLoading" width="25px">
+					<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+					<img src="img/irishjobs.png" width=75px >
+				</div>
+				<div class="col-sm-3">
+					<img src="img/loading.svg" id="jobsieLoading" width="25px">
+					<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+					<img src="img/jobs.png" width=75px >
+				</div>
+				<div class="col-sm-3">
+					<img src="img/loading.svg" id="monsterLoading" width="25px">
+					<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+					<img src="img/monster.png" width=75px >
+				</div>
+			</div>
+
+
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
 
@@ -68,7 +88,7 @@
 		<script src="js/typeahead.js"></script>
 		<script src="js/myScripts.js"></script>
 		<script id="job-template" type="text/x-handlebars-template">
-		  <div class="media">
+		  <div class="media animated fadeInUp">
 			  <a href="http://{{link}}" target="_blank">
 				  <div class="media-left media-middle">
 			      <img class="media-object site-logo" src="{{siteLogo}}" alt="">

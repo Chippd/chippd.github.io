@@ -31,7 +31,9 @@ $( "#searchForm" ).submit(function( event ) {
 var loadSearchPage = function(){
   console.log('loading search page');
   var params = getParams();
-  getIrishJobs(params)
+  getIrishJobs(params);
+  getJobsIe(params);
+  getMonsterJobs(params);
 }
 
 var getParams = function(){
@@ -49,7 +51,7 @@ var getParams = function(){
   }
 
   $('#searchForm ').find("[name=location]").val(params.region)
-  $('#searchForm ').find("[name=keyword]").val(params.keyword)
+  $('#searchForm ').find("[name=keyword]").val(decodeURIComponent(params.keyword))
 
   return params
 }
@@ -68,6 +70,48 @@ var getIrishJobs = function(params) {
       var html = template(this);
 
       $('#results').append(html)
+      $('#irishJobsLoading').hide();
+      $('#irishJobsLoading').siblings(".loadingDone").css("display", "initial")
+    })
+  });
+}
+
+var getJobsIe = function(params) {
+  var source   = $("#job-template").html();
+  var template = Handlebars.compile(source);
+
+  $.get( "http://localhost:8080/scrapejobsie?q="+params.keyword+"&reg="+params.region, function( data ) {
+    // console.log('getIrishJobs ran:', data);
+    $(data).each(function(index){
+      // console.log(this)
+
+      this.siteLogo = "img/jobs.png"
+
+      var html = template(this);
+
+      $('#results').append(html)
+      $('#jobsieLoading').hide();
+      $('#jobsieLoading').siblings(".loadingDone").css("display", "initial")
+    })
+  });
+}
+
+var getMonsterJobs = function(params) {
+  var source   = $("#job-template").html();
+  var template = Handlebars.compile(source);
+
+  $.get( "http://localhost:8080/scrapemonster?q="+params.keyword+"&reg="+params.region, function( data ) {
+    // console.log('getIrishJobs ran:', data);
+    $(data).each(function(index){
+      // console.log(this)
+
+      this.siteLogo = "img/monster.png"
+
+      var html = template(this);
+
+      $('#results').append(html)
+      $('#monsterLoading').hide();
+      $('#monsterLoading').siblings(".loadingDone").css("display", "initial")
     })
   });
 }
