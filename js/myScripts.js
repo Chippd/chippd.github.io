@@ -38,7 +38,7 @@ var jobTemplate, noJobsTemplate
 
 var loadSearchPage = function(){
 
-  if(location.hostname === "locahost"){
+  if(location.hostname === "localhost"){
     //we're in dev mode
     host = localUrl
   } else {
@@ -79,7 +79,7 @@ var getParams = function(){
 
 var getIrishJobs = function(params) {
 
-  $.get(host+"scrapeirishjobs?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get( host+"scrapeirishjobs?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
     if(data === "no jobs found"){
 
@@ -116,7 +116,7 @@ var getIrishJobs = function(params) {
 
 var getJobsIe = function(params) {
 
-  $.get(host+"scrapejobsie?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get( host+"scrapejobsie?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
     if(data === "no jobs found"){
 
@@ -153,7 +153,7 @@ var getJobsIe = function(params) {
 
 var getMonsterJobs = function(params) {
 
-  $.get(host+"scrapemonster?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get( host+"scrapemonster?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
     if(data === "no jobs found"){
 
@@ -190,7 +190,7 @@ var getMonsterJobs = function(params) {
 
 var getLinkedinJobs = function(params) {
 
-  $.get(host+"scrapelinkedin?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get( host+"scrapelinkedin?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
 
     if(data === "no jobs found"){
@@ -240,7 +240,7 @@ var fetchJob = function(link){
   $('#peakModalLoader').show();
 
 
-  $.gethost+"fetchjob?url="+String(link), function( data ) {
+  $.get(host+"fetchjob?url="+String(link), function( data ) {
 
     // console.log(data);
     $('#peakModalLoader').hide();
