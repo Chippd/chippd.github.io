@@ -52,21 +52,25 @@
 					<div class="col-sm-3 align-center p-t-1">
 						<img src="img/loading.svg" id="irishJobsLoading" width="25px">
 						<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+						<img src="img/noJobs.png" class="no-jobs" width="25px" alt="">
 						<img src="img/irishjobs.png" width=75px >
 					</div>
 					<div class="col-sm-3 align-center p-t-1">
-						<img src="img/loading.svg" id="jobsieLoading" width="25px">
+						<img src="img/loading.svg" id="jobsLoading" width="25px">
 						<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+						<img src="img/noJobs.png" class="no-jobs" width="25px" alt="">
 						<img src="img/jobs.png" width=75px >
 					</div>
 					<div class="col-sm-3 align-center p-t-1">
 						<img src="img/loading.svg" id="monsterLoading" width="25px">
 						<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+						<img src="img/noJobs.png" class="no-jobs" width="25px" alt="">
 						<img src="img/monster.png" width=75px >
 					</div>
 					<div class="col-sm-3 align-center p-t-1">
 						<img src="img/loading.svg" id="linkedinLoading" width="25px">
 						<img src="img/tick.png" class="loadingDone" width="25px" alt="">
+						<img src="img/noJobs.png" class="no-jobs" width="25px" alt="">
 						<img src="img/linkedin.png" width=75px >
 					</div>
 				</div>
@@ -147,6 +151,18 @@
 					</div>
 				  </div>
 <!-- 			  </a> -->
+			</div>
+		</script>
+		<script id="no-jobs-template" type="text/x-handlebars-template">
+			<div class="job-listing media animated fadeInUp">
+				  <div class="hidden-xs media-left media-middle">
+			      <img class="media-object site-logo" src="{{siteLogo}}" alt="">
+				  </div>
+				  <div class="job-description media-body">
+				  	<img src="{{siteLogo}}" class="visible-xs site-logo" style="margin-bottom:10px">
+				    <h4 class="media-heading">{{title}}</h4>
+				    <p>{{message}}</p>
+				  </div>
 			</div>
 		</script>
 		<script>

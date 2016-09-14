@@ -28,6 +28,8 @@ $( "#searchForm" ).submit(function( event ) {
   window.location.assign(newUrl)
 });
 
+var jobTemplate, noJobsTemplate
+
 var loadSearchPage = function(){
   console.log('loading search page');
   var params = getParams();
@@ -35,6 +37,8 @@ var loadSearchPage = function(){
   getJobsIe(params);
   getMonsterJobs(params);
   getLinkedinJobs(params);
+  jobTemplate = Handlebars.compile($("#job-template").html());
+  noJobsTemplate = Handlebars.compile($("#no-jobs-template").html());
 }
 
 var getParams = function(){
@@ -57,23 +61,41 @@ var getParams = function(){
   return params
 }
 
+
 var getIrishJobs = function(params) {
-  var source   = $("#job-template").html();
-  var template = Handlebars.compile(source);
 
   $.get( "http://localhost:8080/scrapeirishjobs?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
-    $(data).each(function(index){
-      // console.log(this)
+    if(data === "no jobs found"){
 
-      this.siteLogo = "img/irishjobs.png"
+      var noResults = {
+        "siteLogo":"img/irishJobs.png",
+        "message": "No irishJobs jobs found matching your search"
+      }
 
-      var html = template(this);
 
-      $('#results').append(html)
-      $('#irishJobsLoading').hide();
-      $('#irishJobsLoading').siblings(".loadingDone").css("display", "initial")
-    })
+      var html = noJobsTemplate(noResults);
+
+      $('#results').append(html);
+
+      $('#irishJobsLoading').siblings(".no-jobs").css("display", "initial")
+
+
+    } else {
+        $(data).each(function(index){
+        // console.log(this)
+
+        this.siteLogo = "img/irishJobs.png"
+
+        var html = jobTemplate(this);
+
+        $('#results').append(html)
+       
+        $('#irishJobsLoading').siblings(".loadingDone").css("display", "initial")
+      })
+    }
+
+     $('#irishJobsLoading').hide();
   });
 }
 
@@ -83,57 +105,112 @@ var getJobsIe = function(params) {
 
   $.get( "http://localhost:8080/scrapejobsie?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
-    $(data).each(function(index){
-      // console.log(this)
+    if(data === "no jobs found"){
 
-      this.siteLogo = "img/jobs.png"
+      var noResults = {
+        "siteLogo":"img/jobs.png",
+        "message": "No jobs jobs found matching your search"
+      }
 
-      var html = template(this);
 
-      $('#results').append(html)
-      $('#jobsieLoading').hide();
-      $('#jobsieLoading').siblings(".loadingDone").css("display", "initial")
-    })
+      var html = noJobsTemplate(noResults);
+
+      $('#results').append(html);
+
+      $('#jobsLoading').siblings(".no-jobs").css("display", "initial")
+
+
+    } else {
+        $(data).each(function(index){
+        // console.log(this)
+
+        this.siteLogo = "img/jobs.png"
+
+        var html = jobTemplate(this);
+
+        $('#results').append(html)
+       
+        $('#jobsLoading').siblings(".loadingDone").css("display", "initial")
+      })
+    }
+
+     $('#jobsLoading').hide();
   });
 }
 
 var getMonsterJobs = function(params) {
-  var source   = $("#job-template").html();
-  var template = Handlebars.compile(source);
 
   $.get( "http://localhost:8080/scrapemonster?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
-    $(data).each(function(index){
-      // console.log(this)
+    if(data === "no jobs found"){
 
-      this.siteLogo = "img/monster.png"
+      var noResults = {
+        "siteLogo":"img/monster.png",
+        "message": "No monster jobs found matching your search"
+      }
 
-      var html = template(this);
 
-      $('#results').append(html)
-      $('#monsterLoading').hide();
-      $('#monsterLoading').siblings(".loadingDone").css("display", "initial")
-    })
+      var html = noJobsTemplate(noResults);
+
+      $('#results').append(html);
+
+      $('#monsterLoading').siblings(".no-jobs").css("display", "initial")
+
+
+    } else {
+        $(data).each(function(index){
+        // console.log(this)
+
+        this.siteLogo = "img/monster.png"
+
+        var html = jobTemplate(this);
+
+        $('#results').append(html)
+       
+        $('#monsterLoading').siblings(".loadingDone").css("display", "initial")
+      })
+    }
+
+     $('#monsterLoading').hide();
   });
 }
 
 var getLinkedinJobs = function(params) {
-  var source   = $("#job-template").html();
-  var template = Handlebars.compile(source);
 
   $.get( "http://localhost:8080/scrapelinkedin?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
-    $(data).each(function(index){
+
+    if(data === "no jobs found"){
+
+      var noResults = {
+        "siteLogo":"img/linkedin.png",
+        "message": "No Linkedin jobs found matching your search"
+      }
+
+
+      var html = noJobsTemplate(noResults);
+
+      $('#results').append(html);
+
+      $('#linkedinLoading').siblings(".no-jobs").css("display", "initial")
+
+
+    } else {
+      $(data).each(function(index){
       // console.log(this)
 
       this.siteLogo = "img/linkedin.png"
 
-      var html = template(this);
+      var html = jobTemplate(this);
 
       $('#results').append(html)
-      $('#linkedinLoading').hide();
+     
       $('#linkedinLoading').siblings(".loadingDone").css("display", "initial")
     })
+    }
+
+     $('#linkedinLoading').hide();
+    
   });
 }
 
