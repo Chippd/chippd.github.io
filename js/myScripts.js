@@ -31,7 +31,7 @@ $( "#searchForm" ).submit(function( event ) {
 var jobTemplate, noJobsTemplate
 
 var loadSearchPage = function(){
-  console.log('loading search page');
+  // console.log('loading search page');
   var params = getParams();
   getIrishJobs(params);
   getJobsIe(params);
@@ -100,8 +100,6 @@ var getIrishJobs = function(params) {
 }
 
 var getJobsIe = function(params) {
-  var source   = $("#job-template").html();
-  var template = Handlebars.compile(source);
 
   $.get( "http://localhost:8080/scrapejobsie?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
@@ -219,7 +217,7 @@ var getLinkedinJobs = function(params) {
 
 
 var fetchJob = function(link){
-  console.log('user wants: ', link);
+  // console.log('user wants: ', link);
 
   //clear any previous job
   $('.modal-body .description').text('');
@@ -229,7 +227,7 @@ var fetchJob = function(link){
 
   $.get("http://localhost:8080/fetchjob?url="+String(link), function( data ) {
 
-    console.log(data);
+    // console.log(data);
     $('#peakModalLoader').hide();
     var html = $.parseHTML(data.description)
     $('.modal-body .description').html(html);
