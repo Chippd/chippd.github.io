@@ -34,6 +34,7 @@ var loadSearchPage = function(){
   getIrishJobs(params);
   getJobsIe(params);
   getMonsterJobs(params);
+  getLinkedinJobs(params);
 }
 
 var getParams = function(){
@@ -116,6 +117,26 @@ var getMonsterJobs = function(params) {
   });
 }
 
+var getLinkedinJobs = function(params) {
+  var source   = $("#job-template").html();
+  var template = Handlebars.compile(source);
+
+  $.get( "http://localhost:8080/scrapelinkedin?q="+params.keyword+"&reg="+params.region, function( data ) {
+    // console.log('getIrishJobs ran:', data);
+    $(data).each(function(index){
+      // console.log(this)
+
+      this.siteLogo = "img/linkedin.png"
+
+      var html = template(this);
+
+      $('#results').append(html)
+      $('#linkedinLoading').hide();
+      $('#linkedinLoading').siblings(".loadingDone").css("display", "initial")
+    })
+  });
+}
+
 
   
 
@@ -135,6 +156,6 @@ var fetchJob = function(link){
     $('#peakModalLoader').hide();
     var html = $.parseHTML(data.description)
     $('.modal-body .description').html(html);
-
+    $('#modal-apply-link').attr('href', link);
   });
 }
