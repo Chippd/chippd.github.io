@@ -21,14 +21,25 @@ a, a:hover {
 	padding-top:1em;
 }
 
+.navbar-default {
+	background: none;
+	border:none;
+}
+
 .homepageLogo {
 	margin-bottom:20px;
 	max-width:80%;
 }
 
-.homepageSub {
+.homepage-headings h1 {
 	color:white;
 	font-size:1.2em;
+	text-align: center
+}
+
+.homepage-headings p {
+	font-size:0.9em;
+	color:white;
 	text-align: center
 }
 
