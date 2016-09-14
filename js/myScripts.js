@@ -1,5 +1,11 @@
 
 
+var herokuUrl = "https://jobster-backend.herokuapp.com/";
+var localUrl = "http://localhost:8080/";
+var host;
+
+
+
 var counties = ["Antrim", "Armagh", "Carlow", "Cavan", "Clare", "Cork", "Derry", "Donegal", "Down", "Dublin", "Fermanagh", "Galway", "Kerry", "Kildare", "Kilkenny", "Laois", "Leitrim", "Limerick", "Longford", "Louth", "Mayo", "Meath", "Monaghan", "Offaly", "Roscommon", "Sligo", "Tipperary", "Tyrone", "Waterford", "Westmeath", "Wexford", "Wicklow"]
 
 
@@ -31,6 +37,15 @@ $( "#searchForm" ).submit(function( event ) {
 var jobTemplate, noJobsTemplate
 
 var loadSearchPage = function(){
+
+  if(location.hostname === "locahost"){
+    //we're in dev mode
+    host = localUrl
+  } else {
+    //we're in production
+    host = herokuUrl
+  }
+
   // console.log('loading search page');
   var params = getParams();
   getIrishJobs(params);
@@ -64,7 +79,7 @@ var getParams = function(){
 
 var getIrishJobs = function(params) {
 
-  $.get( "http://localhost:8080/scrapeirishjobs?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get(host+"scrapeirishjobs?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
     if(data === "no jobs found"){
 
@@ -101,7 +116,7 @@ var getIrishJobs = function(params) {
 
 var getJobsIe = function(params) {
 
-  $.get( "http://localhost:8080/scrapejobsie?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get(host+"scrapejobsie?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
     if(data === "no jobs found"){
 
@@ -138,7 +153,7 @@ var getJobsIe = function(params) {
 
 var getMonsterJobs = function(params) {
 
-  $.get( "http://localhost:8080/scrapemonster?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get(host+"scrapemonster?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
     if(data === "no jobs found"){
 
@@ -175,7 +190,7 @@ var getMonsterJobs = function(params) {
 
 var getLinkedinJobs = function(params) {
 
-  $.get( "http://localhost:8080/scrapelinkedin?q="+params.keyword+"&reg="+params.region, function( data ) {
+  $.get(host+"scrapelinkedin?q="+params.keyword+"&reg="+params.region, function( data ) {
     // console.log('getIrishJobs ran:', data);
 
     if(data === "no jobs found"){
@@ -225,7 +240,7 @@ var fetchJob = function(link){
   $('#peakModalLoader').show();
 
 
-  $.get("http://localhost:8080/fetchjob?url="+String(link), function( data ) {
+  $.gethost+"fetchjob?url="+String(link), function( data ) {
 
     // console.log(data);
     $('#peakModalLoader').hide();
