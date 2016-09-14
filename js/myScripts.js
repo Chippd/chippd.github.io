@@ -117,3 +117,24 @@ var getMonsterJobs = function(params) {
 }
 
 
+  
+
+
+var fetchJob = function(link){
+  console.log('user wants: ', link);
+
+  //clear any previous job
+  $('.modal-body .description').text('');
+
+  $('#peakModalLoader').show();
+
+
+  $.get("http://localhost:8080/fetchjob?url="+String(link), function( data ) {
+
+    console.log(data);
+    $('#peakModalLoader').hide();
+    var html = $.parseHTML(data.description)
+    $('.modal-body .description').html(html);
+
+  });
+}

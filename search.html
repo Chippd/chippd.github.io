@@ -9,6 +9,7 @@
 
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/hover.css">
 		<link rel="stylesheet" href="css/style.css">
 
 
@@ -76,6 +77,30 @@
 			</div>
 
 
+			<div class="modal fade" tabindex="-1" role="dialog" id="peakModal">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title"></h4>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="center-block text-center" id="peakModalLoader">
+			      		<p>Fetching job details</p>
+			      		<img src="img/loading.svg" width="50" alt="">
+			      	</div>
+			      	<div class="description">
+			      		
+			      	</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+
 
 
 		<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
@@ -85,12 +110,13 @@
 		<script src="js/typeahead.js"></script>
 		<script src="js/myScripts.js"></script>
 		<script id="job-template" type="text/x-handlebars-template">
-		  <div class="media animated fadeInUp">
-			  <a href="{{link}}" target="_blank">
-				  <div class="media-left media-middle">
+		  <div class="job-listing media animated fadeInUp">
+<!-- 			  <a href="{{link}}" target="_blank"> -->
+				  <div class="hidden-xs media-left media-middle">
 			      <img class="media-object site-logo" src="{{siteLogo}}" alt="">
 				  </div>
-				  <div class="media-body">
+				  <div class="job-description media-body">
+				  	<img src="{{siteLogo}}" class="visible-xs site-logo" style="margin-bottom:10px">
 				    <h4 class="media-heading">{{title}}</h4>
 				    <p>{{description}}</p>
 				    <p>
@@ -107,8 +133,14 @@
 				  		<span>{{date}}</span>
 				  	{{/if}}
 				  </p>
+				  <div class="btn-group" role="group" aria-label="...">
+					  <a target="_blank" class="btn btn-default" href={{link}}>
+					   <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>  Open</a>
+					  <a data-toggle="modal" data-target="#peakModal" class="btn btn-default" onclick="fetchJob('{{link}}')">
+					   <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>  Peak</a>
+					</div>
 				  </div>
-			  </a>
+<!-- 			  </a> -->
 			</div>
 		</script>
 		<script>
