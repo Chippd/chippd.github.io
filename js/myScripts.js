@@ -191,7 +191,7 @@ var getMonsterJobs = function(params) {
 var getLinkedinJobs = function(params) {
 
   $.get( host+"scrapelinkedin?q="+params.keyword+"&reg="+params.region, function( data ) {
-    // console.log('getIrishJobs ran:', data);
+    console.log('getlinkedin ran:', data);
 
     if(data === "no jobs found"){
 
