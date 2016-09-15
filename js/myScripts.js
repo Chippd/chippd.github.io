@@ -100,7 +100,7 @@ var getIrishJobs = function(params) {
         $(data).each(function(index){
         // console.log(this)
 
-        this.siteLogo = "img/irishJobs.png"
+        this.siteLogo = "img/irishjobs.png"
 
         var html = jobTemplate(this);
 
