@@ -84,7 +84,7 @@ var getIrishJobs = function(params) {
     if(data === "no jobs found"){
 
       var noResults = {
-        "siteLogo":"img/irishJobs.png",
+        "siteLogo":"img/irishjobs.png",
         "message": "No irishJobs jobs found matching your search"
       }
 
