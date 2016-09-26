@@ -12,14 +12,16 @@ body {
 	background-attachment: fixed;*/
 }
 
-h1, h2, h3, h5, h5{
-	color:#22223B !important;
+h1, h2, h3, h4, h5{
+	color:#4A4E69 !important;
 	font-weight: 300
 }
 
 p {
-
+	color: #4A4E69;
 }
+
+
 .m-t-1 {
 	margin-top:1em;
 }
