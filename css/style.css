@@ -1,6 +1,6 @@
 
 body {
-	background: #F2E9E4;
+/*	background: #F2E9E4;*/
 	/* fallback for old browsers */
 	/*background: -webkit-linear-gradient(to left, #ef32d9, #89fffd);*/
 	/* Chrome 10-25, Safari 5.1-6 */
@@ -21,6 +21,10 @@ p {
 	color: #4A4E69;
 }
 
+.profile-pic {
+	box-shadow: 0px 4px 6px 2px grey;
+  border-radius: 50%
+}
 
 .m-t-1 {
 	margin-top:1em;
@@ -40,4 +44,15 @@ p {
 	background: none;
 	border: none;
 	border-radius:0;
+}
+
+.row-header {
+	background-color: lightgrey;
+	-webkit-clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
+	clip-path: polygon(0 8%, 100% 4%, 100% 96%, 0% 100%);
+	padding: 65px 10px;
+}
+
+.work-item-row {
+	/*padding: 10% 0;*/
 }
