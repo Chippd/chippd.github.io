@@ -89,6 +89,8 @@ p {
 	box-shadow: 0px 2px 5px 1px darkgrey;
 }
 
-.btn-launch:hover {
-
+.btn-launch:hover,
+.btn-launch:focus {
+	color: white;
+	background: #3d7140;
 }
