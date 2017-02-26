@@ -14,11 +14,14 @@ body {
 
 h1, h2, h3, h4, h5{
 	color:#4A4E69 !important;
-	font-weight: 300
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
 }
 
 p {
 	color: #4A4E69;
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .profile-pic {
