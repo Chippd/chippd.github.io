@@ -10,6 +10,7 @@ body {
 	margin: 0;
 	background-repeat: no-repeat;
 	background-attachment: fixed;*/
+	margin-top:100px;
 }
 
 h1, h2, h3, h4, h5{
@@ -42,11 +43,20 @@ p {
 	margin-top:25px;
 }
 
+nav {
+	display: flex;
+}
+
 .navbar-default {
-	background-color: #C9ADA7;
-	background: none;
+	background-color: #93ca44;
 	border: none;
 	border-radius:0;
+}
+
+.navbar-text a.navbar-link {
+	color:white;
+	font-size: 1.3em;
+	font-weight: bolder;
 }
 
 .row-grey {
