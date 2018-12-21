@@ -5,15 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Chris Dermody's GitHub Projects</title>
+		<title>Chris Dermody | GitHub portfolio page</title>
 
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/style.css">
-
+		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- Leave those next 4 lines if you care about users using IE8 -->
@@ -22,209 +18,193 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-		<script>
+		<style>
+			h1, h2, h3, h4, h5{
+				color:#4A4E69 !important;
+				font-weight: 300;
+				font-family: 'Open Sans', sans-serif;
+			}
 
-		 if(location.hostname != "localhost") {
-		 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-42920430-17', 'auto'); ga('send', 'pageview');
-		 } else {
-		 	console.log('dev mode detected, don\'t track view')
-		 }
+			p {
+				color: #4A4E69;
+				font-weight: 300;
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			.profile-pic {
+				box-shadow: 0px 4px 6px 2px lightgrey;
+			  border-radius: 50%
+			}
+
+			.m-t-1 {
+				margin-top:1em;
+			}
+
+			.p-t-1 {
+				padding-top:1em;
+			}
 
 
-		</script>
+			.about-me {
+				margin-top:25px;
+			}
 
+			.navbar-default {
+				background-color: #C9ADA7;
+				background: none;
+				border: none;
+				border-radius:0;
+			}
 
+			.repo-row {
+				padding: 65px 10px;
+			}
+
+			.repo-row:nth-child(odd) {
+			  background-color: lightgrey;
+			  -webkit-clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
+			  clip-path: polygon(0 0%, 100% 4%, 100% 96%, 0% 100%);
+			}
+
+			.vertical-align {
+				display: flex;
+			  align-items: center;
+			  justify-content: center;
+			}
+
+			@media (max-width: 991px) {
+			    .row.vertical-align {
+			        display: block; /* Turn off the flexible box layout */
+			    }
+			}
+
+			.work-item-img {
+				max-height: 480px;
+				max-width:80%;
+			}
+
+			.row-footer {
+			/*	background-color: lightgrey;
+				-webkit-clip-path: polygon(0 0%, 100% 4%, 100% 100%, 0% 100%);
+				clip-path: polygon(0 0%, 100% 4%, 100% 100%, 0% 100%);*/
+				padding: 65px 10px;
+			}
+
+			.linkedin-btn {
+				width:140px;
+				box-shadow: 0px 2px 5px 1px lightgrey;
+				padding: 12px;
+				border-radius: 5px;
+			}
+
+			.btn-launch {
+				width:100%;
+				max-width:200px;
+				background-color: #549657;
+				color:white;
+				box-shadow: 0px 2px 5px 1px darkgrey;
+			}
+
+			.btn-launch:hover,
+			.btn-launch:focus {
+				color: white;
+				background: #3d7140;
+			}
+
+			.techUsed {
+				font-size:54px;
+				padding: 40px 0 0;
+			}
+
+			.techUsed i {
+				margin:0 15px;
+			}
+
+			.toolsUsed {
+				font-size: 100px;
+			  padding: 40px 0;
+			}
+
+			.toolsUsed i {
+				margin:0 15px;
+			}
+
+			.about {
+				margin-bottom:80px;
+			}
+		</style>
 
 	</head>
 	<body>
 
-		<nav class="navbar navbar-default navbar-fixed-top animated slideInDown">
-		  <div class="container-fluid">
-		    	<p class="navbar-text navbar-right"><a href="http://chrisdermody.com/web-developer-portfolios-5-single-page-websites-to-land-you-your-next-development-job/?utm_source=github_portfolio&utm_medium=eng_mark&utm_campaign=free_webdev_templates" target="_blank" class="navbar-link">This portfolio template got me a job! I'm giving the code away for free here</a></p>
-		  </div>
-		</nav>
-
-
 
 		<div class="container-fluid">
 
-			<div class="text-center">
-				<img src="img/profiler-round2.png" width=200 class="profile-pic">
-				<h1>Chris Dermody</h1>
-			  <h3>Product Manager</h3>
-			  <h5>Web/Mobile Developer</h5>
+			<section class="about">
+				<div class="text-center" style="margin-top:100px">
+					<img src="https://avatars3.githubusercontent.com/u/6480754?v&#x3D;4" width=200 class="profile-pic">
+					<h1>Chris Dermody</h1>
+				  <h3></h3>
+				  <h5></h5>
 
-			  <div class="text-center" style="margin:20px">
-			  	<a href="http://chrisdermody.com/" class="" target="_blank">
-			  		chrisdermody.com
-			  	</a>
-			  </div>
-			</div>
+				  <div class="text-center" style="margin:20px">
+				  	<a href="mailto:chrisdermody1@gmail.com" class="" target="_blank">
+				  		chrisdermody1@gmail.com
+				  	</a>
+				  </div>
+				</div>
+			</section>
 
-			<div class="row row-grey">
-			    <div class="col-sm-8 col-sm-offset-2">
-
-			    	<div class="row work-item-row">
-			    		<div class="col-lg-8">
-			    			<img src="img/mydevportfolio.png" class="img-responsive center-block">
-			    		</div>
-			    		<div class="col-lg-4">
-			    			<h2><a href="https://mydevportfol.io?ref=ghportfolio" target="blank">MyDevPortfol.io</a></h2>
-			    			<p>A web application to help developers and programmers build beautifully designed portfolios in minutes</p>
-			    			<h4>Technology</h4>
-			    			<p>Mydevportfol.io is built using Angular2+, with a node backend for handling API requests, and runs on Heroku. Payments are handled via Stripe, Firebase provides the database solution and Bootstrap3 is the CSS framework of choice for this project</p>
-			    		</div>
-		    		</div>
-		    		<div class="row text-center">
-		    			<div class="col-xs-12">
-		    				<img src="img/techlogos/angular.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/node.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/stripe.svg" class="techlogo" width="100">
-		    				<img src="img/techlogos/heroku.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/firebase.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/bootstrap.png" class="techlogo" width="100">
-		    			</div>
-		    		</div>
-		    		<div class="row text-center" style="margin:20px;">
-		    				<a class="btn btn-launch" href="https://mydevportfol.io?ref=ghportfolio" target="blank">Build a portfolio</a>
-	    			</div>
-					</div>
-			</div>
-
-
-			<div class="row row-white">
-			    <div class="col-sm-8 col-sm-offset-2">
-
-			    	<div class="row work-item-row">
-			    		<div class="col-lg-8 col-lg-push-4">
-			    			<img src="img/jobbie1.png" class="img-responsive center-block">
-			    		</div>
-			    		<div class="col-lg-4 col-lg-pull-8">
-			    			<h2><a href="http://jobb.ie" target="blank">Jobb.ie</a></h2>
-			    			<p>A simple web app built to quickly find jobs in Ireland. Users enter the search term and desired county, and are offered job listings from 3 of the most popular job sites in Ireland</p>
-			    			<h4>Technology</h4>
-			    			<p>Jobbie uses Bootstrap3 for a mobile-first layout, with jQuery for easy page manipulation. On the backend an Express/Node.js app lives on a Heroku dyno that acts as a middleware to scrape job sites and return the information to the user.</p>
-			    		</div>
-		    		</div>
-		    		<div class="row text-center">
-		    			<div class="col-xs-12">
-			    			<img src="img/techlogos/jquery.png" class="techlogo" width="100">
-			    			<img src="img/techlogos/bootstrap.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/node.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/heroku.png" class="techlogo" width="100">
-		    			</div>
-		    		</div>
-		    		<div class="row text-center" style="margin:20px;">
-		    				<a class="btn btn-launch" href="http://jobb.ie" target="blank">Launch</a>
-	    			</div>
-					</div>
-			</div>
-
-
-			<div class="row row-grey">
-			    <div class="col-sm-8 col-sm-offset-2">
-
-			    	<div class="row work-item-row">
-			    		<div class="col-lg-8">
-			    			<img src="img/mydeliverypal.png" class="img-responsive center-block">
-			    		</div>
-			    		<div class="col-lg-4">
-			    			<h2><a href="https://play.google.com/store/apps/details?id=com.chrisdermody.mydeliverypal&hl=en" target="blank">My Delivery Pal</a></h2>
-			    			<p>An Android application for delivery drivers and couriers, making them faster and more efficient at their job</p>
-			    			<h4>Technology</h4>
-			    			<p>Delivery Pal is build with Ionic, Angular, and Firebase for real-time location tracking. Integrating with the Google Maps API for address lookup and navigation. A Node.js server hosted on Heroku acts as a middle-man, handling backend logic and database updates within Firebase</p>
-			    		</div>
-		    		</div>
-		    		<div class="row text-center">
-		    			<div class="col-xs-12">
-		    				<img src="img/techlogos/ionic.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/angular.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/node.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/heroku.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/firebase.png" class="techlogo" width="100">
-		    			</div>
-		    		</div>
-		    		<div class="row text-center" style="margin:20px;">
-		    				<a class="btn btn-launch" href="https://play.google.com/store/apps/details?id=com.chrisdermody.mydeliverypal&hl=en" target="blank">Go to app</a>
-	    			</div>
-					</div>
-			</div>
+			<section class="repos">
+		  		<div class="row repo-row">
+		  		    <div class="col-sm-8 col-sm-offset-2">
+		  		    	<div class="row vertical-align">
+				  		    	<div class="col-xs-12 text-center">
+				  		    		<h2><a href="https://github.com/Chippd/Angular-2-Step-By-Step" target="blank">Angular-2-Step-By-Step</a></h2>
+				  		    		<p>This is the repository for my course Angular 2 Step By Step </p>
+				  		    	</div>
+		  		    		
+		  	    		</div>
+		  	    		<div class="row text-center techUsed">
+		  	    			<div class="col-xs-12">
+		  	    			</div>
+		  	    		</div>
+		  	    		<div class="row text-center" style="margin:20px;">
+		  	    				<a class="btn btn-launch" href="https://github.com/Chippd/Angular-2-Step-By-Step" target="blank">View on GitHub</a>
+		      			</div>
+		  				</div>
+		  		</div>
+		  		<div class="row repo-row">
+		  		    <div class="col-sm-8 col-sm-offset-2">
+		  		    	<div class="row vertical-align">
+				  		    	<div class="col-xs-12 text-center">
+				  		    		<h2><a href="https://github.com/Chippd/angular2test" target="blank">angular2test</a></h2>
+				  		    		<p></p>
+				  		    	</div>
+		  		    		
+		  	    		</div>
+		  	    		<div class="row text-center techUsed">
+		  	    			<div class="col-xs-12">
+		  	    			</div>
+		  	    		</div>
+		  	    		<div class="row text-center" style="margin:20px;">
+		  	    				<a class="btn btn-launch" href="https://github.com/Chippd/angular2test" target="blank">View on GitHub</a>
+		      			</div>
+		  				</div>
+		  		</div>
 
 
 
-			<div class="row row-white">
-			    <div class="col-sm-8 col-sm-offset-2">
-			    	<div class="row work-item-row">
-			    		<div class="col-lg-8 col-lg-push-4">
-			    			<img src="img/vistoryscreen1.png" class="img-responsive center-block">
-			    		</div>
-			    		<div class="col-lg-4 col-lg-pull-8">
-			    			<h2><a href="http://vistoryapp.com" target="blank">Vistory</a></h2>
-			    			<h4>Mobile Car App</h4>
-			    			<p>An Android application for vehicle owners to quickly and easily log maintenance and parts costs for their cars.</p>
-			    			<h4>Technology</h4>
-			    			<p>Vistory is built on the Ionic platform that uses the Angular.js framework to build cross-platform mobile applications. On the backend Vistory uses an Express/Node.js app on Heroku to handle user accounts and authentication, while a remote noSQL database sits on Cloudant for backing up user data</p>
-			    		</div>
-			    	</div>
-		    		<div class="row text-center">
-		    			<div class="col-xs-12">
-		    				<img src="img/techlogos/ionic.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/angular.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/node.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/heroku.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/pouch-grey.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/cloudant.png" class="techlogo" width="100">
-		    			</div>
-		    		</div>
-		    		<div class="row text-center" style="margin:20px;">
-		    				<a class="btn btn-launch" href="http://vistoryapp.com" target="blank">Open app site</a>
-	    			</div>
-					</div>
-			</div>
-
-			<div class="row row-grey">
-			    <div class="col-sm-8 col-sm-offset-2">
-			    	<div class="row work-item-row">
-			    		<div class="col-lg-8 col-lg-push-4 text-center">
-			    			<img src="img/techlogos/Slack.png" class="img-responsive center-block" width="300" style="margin: auto; margin-top:50px">
-			    		</div>
-			    		<div class="col-lg-4 col-lg-pull-8">
-			    			<h2><a href="https://github.com/Chippd/slackDomainChecker" target="blank">Slack Chat Bot</a></h2>
-			    			<p>A Slack chat bot built to quickly check domain name availability across the most popular TLD's. </p>
-			    			<h4>Technology</h4>
-			    			<p>The Slack bot interacts with a Node.js app living on Heroku, which requests information from a free domain-checking api, parses the response, and delivers a colour-coded response back to the client.</p>
-			    		</div>
-			    	</div>
-		    		<div class="row text-center">
-		    			<div class="col-xs-12">
-		    				<img src="img/techlogos/node.png" class="techlogo" width="100">
-		    				<img src="img/techlogos/heroku.png" class="techlogo" width="100">
-		    			</div>
-		    		</div>
-		    		<div class="row text-center" style="margin:20px;">
-		    				<a class="btn btn-launch" href="https://github.com/Chippd/slackDomainChecker" target="blank">View on Github</a>
-	    			</div>
-					</div>
-			</div>
-
-			<div class="row row-tools row-white">
-			    <div class="col-sm-12 text-center">
-
-			    	<h3>Tools I Use</h3>
-    				<img src="img/tool-logos/sketch.png" class="techlogo" width="150">
-    				<img src="img/tool-logos/git.png" class="techlogo" width="150">
-    				<img src="img/tool-logos/sublime.png" class="techlogo" width="150">
-
-					</div>
-			</div>
+			</section>			
 
 			<div class="row row-footer text-center">
 				<div class="col">
   				<div style="margin:50px;">
   					<h3 style="margin:50px 0 15px">I'm available for work, get in touch</h3>
-				  	<a href="http://chrisdermody.com/" class="" target="_blank">
-				  		chrisdermody.com
+				  	<a href="mailto:chrisdermody1@gmail.com" class="" target="_blank">
+				  		chrisdermody1@gmail.com
 				  	</a>
+
 				  </div>
 				</div>
 			</div>
@@ -233,22 +213,14 @@
 
 
 		</div>
-<!--
-		<div class="container-fluid">
-
-
-
-		</div> -->
-
-<!-- 		<div class="text-center">
-				<p style="margin-top:20px"">*Also love building other things, like VBA macros, mobile applications, chat bots, and the odd motorbike...</p>
-			</div> -->
-
 
 
 		<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-		<script src="js/jquery-3.1.0.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script
+	  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+	  crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<!-- <script src="js/myScripts.js"></script> -->
 
 	</body>
