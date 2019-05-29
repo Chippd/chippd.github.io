@@ -1,4 +1,4 @@
-# chippd.github.io
+# The portfolio that got me a dev job
 [Demo](https://chippd.github.io/)
 
 Hope this helps you out.
